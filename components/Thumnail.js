@@ -3,7 +3,7 @@ import Image from 'next/dist/client/image'
 import  { forwardRef } from 'react';
 
 const baseUrl="https://image.tmdb.org/t/p/original/"
-const Thumnail =forwardRef( ({result},ref) => {
+const Thumnail =forwardRef( function({result},ref) {
     return (
         <div ref={ref} className="result p-5 cursor-pointer transition-all duration-200 ease-in-out transform sm:hover:scale-105 ">
              <Image
@@ -21,4 +21,7 @@ const Thumnail =forwardRef( ({result},ref) => {
     )
 })
 
-export default Thumnail
+
+Thumnail.displayName = 'Thumnail';
+
+export default Thumnail;
